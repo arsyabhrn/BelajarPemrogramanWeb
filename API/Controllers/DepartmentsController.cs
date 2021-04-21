@@ -75,7 +75,7 @@ namespace API.Controllers
             }
             catch(NullReferenceException)
             {
-                return BadRequest("Data Tidak Ditemukan");
+                return BadRequest("Data Tidak Ditemukan, Masukkan ID Dengan Benar");
             }
             catch(System.Data.Entity.Infrastructure.DbUpdateException)
             {
