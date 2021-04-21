@@ -25,8 +25,8 @@ namespace API.Models
         public int id { get; set; }
         public string name { get; set; }
 
-        [ForeignKey("Division")]
         public int divisionid { get; set; }
+        [ForeignKey("divisionid")]
         public Division Division { get; set; }
     }
 }

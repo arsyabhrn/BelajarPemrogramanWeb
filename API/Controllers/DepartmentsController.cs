@@ -17,11 +17,11 @@ namespace API.Controllers
             var post = departmentRepository.Insert(department);
             if(post == 1)
             {
-                return Ok("Data Berhasil Ditambahkan");
+                return Ok("Data Has Been Inserted");
             }
             else
             {
-                return BadRequest("Data Gagal Ditambahkan");
+                return BadRequest("Insert Data Failed");
             }
         }
 
@@ -30,17 +30,17 @@ namespace API.Controllers
             var get = departmentRepository.GetDepartments();
             if(get.Count() == 0)
             {
-                return BadRequest("Data Kosong");
+                return BadRequest("Data Not Found");
             }
             return Ok(get);
 
         }
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult GetById(int id)
         {
             var get = departmentRepository.GetDepartmentId(id);
             if(get == null)
             {
-                return BadRequest("Data Tidak Ditemukan");
+                return BadRequest("Data Not Found");
             }
             return Ok(get);
         }
@@ -50,12 +50,12 @@ namespace API.Controllers
             var delete = departmentRepository.GetDepartmentId(id);
             if (delete == null)
             {
-                return BadRequest("Data Tidak Ditemukan");
+                return BadRequest("Data Not Found");
             }
             else
             {
                 departmentRepository.Delete(id);
-                return Ok("Data Berhasil Dihapus");
+                return Ok("Data Has Been Deleted");
             }
 
         }
@@ -66,7 +66,7 @@ namespace API.Controllers
                 var update = departmentRepository.Update(id, department);
                 if(update == 1)
                 {
-                    return Ok("Data Berhasil Diperbarui");
+                    return Ok("Data Has Been Updated");
                 }
                 else
                 {

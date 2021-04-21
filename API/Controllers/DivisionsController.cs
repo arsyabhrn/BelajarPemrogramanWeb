@@ -23,7 +23,7 @@ namespace API.Controllers
             var get = divisionRepository.GetDivisions();
             return Ok(get);
 
-        }public IHttpActionResult Get(int id)
+        }public IHttpActionResult GetById(int id)
         {
             var get = divisionRepository.GetDivisionId(id);
             return Ok(get);
